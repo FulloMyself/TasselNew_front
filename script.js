@@ -789,12 +789,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Initialize team section
   generateTeamCards();
-  // Initialize team section
-  console.log('Initializing team section...');
-  console.log('Team grid element:', document.getElementById('teamGrid'));
-  generateTeamCards();
-  setupTeamModal();
-  console.log('Team cards generated');
   setupTeamModal();
 
 });
