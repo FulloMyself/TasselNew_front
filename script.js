@@ -213,7 +213,6 @@ document.addEventListener('DOMContentLoaded', function () {
   function navigateLightbox(direction) {
     if (visibleMediaItems.length === 0) return;
 
-    // Stop video playback before switching
     if (lightboxVideo.style.display === 'block') {
       lightboxVideo.pause();
     }
@@ -239,7 +238,6 @@ document.addEventListener('DOMContentLoaded', function () {
   lightboxPrev.addEventListener('click', () => navigateLightbox('prev'));
   lightboxNext.addEventListener('click', () => navigateLightbox('next'));
 
-  // Keyboard navigation
   document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('show')) return;
 
@@ -274,7 +272,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let isAutoPlaying = true;
 
     function updateSpecialsCarousel(index) {
-      // Ensure index is within bounds
       if (index < 0) index = 0;
       if (index >= totalSlides) index = totalSlides - 1;
 
@@ -285,7 +282,6 @@ document.addEventListener('DOMContentLoaded', function () {
         behavior: 'smooth'
       });
 
-      // Update dots
       specialsDots.forEach((dot, i) => {
         if (i === currentSpecialIndex) {
           dot.classList.add('active');
@@ -311,7 +307,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
-    // Event listeners for buttons
     specialsPrev.addEventListener('click', () => {
       prevSpecial();
       resetAutoPlay();
@@ -322,7 +317,6 @@ document.addEventListener('DOMContentLoaded', function () {
       resetAutoPlay();
     });
 
-    // Dot indicators
     specialsDots.forEach((dot, index) => {
       dot.addEventListener('click', () => {
         updateSpecialsCarousel(index);
@@ -330,7 +324,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
 
-    // Auto-play functionality
     function startAutoPlay() {
       if (autoPlayInterval) clearInterval(autoPlayInterval);
       autoPlayInterval = setInterval(() => {
@@ -352,7 +345,6 @@ document.addEventListener('DOMContentLoaded', function () {
       startAutoPlay();
     }
 
-    // Pause auto-play on hover
     const carouselContainer = document.querySelector('.specials-carousel-container');
     if (carouselContainer) {
       carouselContainer.addEventListener('mouseenter', () => {
@@ -365,7 +357,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
-    // Handle scroll events to sync dots
     specialsCarousel.addEventListener('scroll', () => {
       const scrollPosition = specialsCarousel.scrollLeft;
       const slideWidth = specialSlides[0]?.offsetWidth || 0;
@@ -383,14 +374,195 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    // Initialize carousel
     updateSpecialsCarousel(0);
     startAutoPlay();
 
-    // Handle window resize
     window.addEventListener('resize', () => {
       updateSpecialsCarousel(currentSpecialIndex);
     });
   }
+
+  // ========== TEAM MEMBERS DATA ==========
+  const teamMembers = [
+    {
+      id: 1,
+      name: "Sandra",
+      role: "Staff - Nails Department",
+      specialization: "Nail Tech",
+      image: "assets/images/team/sandra.jpeg",
+      bio: "Sandra is a skilled nail technician with a passion for creating beautiful and unique nail designs.",
+      quote: "Beautiful nails are the perfect finishing touch to any look.",
+      instagram: "https://instagram.com/",
+      whatsapp: "https://wa.me/27729605153"
+    },
+    {
+      id: 2,
+      name: "Nomonde",
+      role: "Staff - Beauty and Skincare Department",
+      specialization: "Beauty Therapist",
+      image: "assets/images/team/nomonde.jpeg",
+      bio: "Nomonde brings precision and artistry to every treatment. Her expertise in skincare helps clients achieve healthy, glowing skin.",
+      quote: "Healthy skin is beautiful skin. Let me help you find your glow.",
+      instagram: "https://instagram.com/",
+      whatsapp: "https://wa.me/27729605153"
+    },
+    {
+      id: 3,
+      name: "Natasha",
+      role: "Staff - Hair and Kiddies Department",
+      specialization: "Kiddies Hair Stylist",
+      image: "assets/images/team/natasha.jpeg",
+      bio: "Natasha's creative styling and gentle approach have made her a favorite among young clients. She specializes in creating magical hairstyles for children.",
+      quote: "Every child deserves to feel special and confident in their own style.",
+      instagram: "https://instagram.com/",
+      whatsapp: "https://wa.me/27729605153"
+    },
+    {
+      id: 4,
+      name: "Cynthia",
+      role: "Staff - Hair and Kiddies Department",
+      specialization: "Kiddies Hair Stylist",
+      image: "assets/images/team/cynthia.jpeg",
+      bio: "Cynthia's creative styling and gentle approach have made her a favorite among young clients. She specializes in creating magical hairstyles for children.",
+      quote: "Beautiful hair is the perfect way to express your child's unique personality.",
+      instagram: "https://instagram.com/",
+      whatsapp: "https://wa.me/27729605153"
+    },
+    {
+      id: 5,
+      name: "Tiny",
+      role: "Staff - Hair and Kiddies Department",
+      specialization: "Kiddies Hair Stylist",
+      image: "assets/images/team/tiny.jpeg",
+      bio: "Tiny's creative styling and gentle approach have made her a favorite among young clients. She specializes in creating magical hairstyles for children.",
+      quote: "Beautiful hair is the perfect way to express your child's unique personality.",
+      instagram: "https://instagram.com/",
+      whatsapp: "https://wa.me/27729605153"
+    },
+    {
+      id: 6,
+      name: "Thando",
+      role: "Staff - Hair and Kiddies Department",
+      specialization: "Kiddies Hair Stylist",
+      image: "assets/images/team/thando.jpeg",
+      bio: "Thando's creative styling and gentle approach have made her a favorite among young clients. She specializes in creating magical hairstyles for children.",
+      quote: "Beautiful hair is the perfect way to express your child's unique personality.",
+      instagram: "https://instagram.com/",
+      whatsapp: "https://wa.me/27729605153"
+    },
+    {
+      id: 7,
+      name: "Keisha",
+      role: "Staff - Receptionist and Hair Department",
+      specialization: "Hair Stylist, Receptionist",
+      image: "assets/images/team/keisha.jpeg",
+      bio: "The friendly face behind your bookings and the one keeping you updated on Tassel's latest offers. She's dedicated to making your experience smooth from start to finish.",
+      quote: "Your smile is our greatest reward. Let me help you book your perfect appointment.",
+      instagram: "https://instagram.com/",
+      whatsapp: "https://wa.me/27729605153"
+    }
+  ];
+
+  // ========== TEAM SECTION FUNCTIONS ==========
+  function generateTeamCards() {
+    const teamGrid = document.getElementById('teamGrid');
+    if (!teamGrid) return;
+
+    teamGrid.innerHTML = teamMembers.map(member => `
+        <div class="team-card" data-id="${member.id}" style="opacity: 1; transform: none;">
+            <div class="team-image-wrapper">
+                <img src="${member.image}" 
+                     alt="${member.name}" 
+                     class="team-image" 
+                     loading="lazy"
+                     onerror="this.onerror=null; this.src='https://placehold.co/400x400/9a8060/white?text=${member.name.charAt(0)}'">
+            </div>
+            <div class="team-info">
+                <h3>${member.name}</h3>
+                <p class="team-role">${member.role}</p>
+                <p class="team-specialization">${member.specialization}</p>
+                <div class="team-social">
+                    <a href="${member.instagram}" target="_blank" class="social-icon" onclick="event.stopPropagation()">📷</a>
+                    <a href="${member.whatsapp}" target="_blank" class="social-icon" onclick="event.stopPropagation()">💬</a>
+                </div>
+            </div>
+        </div>
+    `).join('');
+
+    // Add click handlers for team cards
+    document.querySelectorAll('.team-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (e.target.classList.contains('social-icon') || e.target.closest('.social-icon')) return;
+        const memberId = parseInt(card.dataset.id);
+        openTeamModal(memberId);
+      });
+    });
+  }
+
+  function openTeamModal(memberId) {
+    const member = teamMembers.find(m => m.id === memberId);
+    if (!member) return;
+
+    const modal = document.getElementById('teamModal');
+    if (!modal) {
+      console.log('Team modal not found');
+      return;
+    }
+
+    const modalImage = document.getElementById('modalImage');
+    const modalName = document.getElementById('modalName');
+    const modalRole = document.getElementById('modalRole');
+    const modalSpecialization = document.getElementById('modalSpecialization');
+    const modalBio = document.getElementById('modalBio');
+    const modalQuote = document.getElementById('modalQuote');
+    const modalInstagram = document.getElementById('modalInstagram');
+    const modalWhatsapp = document.getElementById('modalWhatsapp');
+
+    modalImage.src = member.image;
+    modalImage.alt = member.name;
+    modalName.textContent = member.name;
+    modalRole.textContent = member.role;
+    modalSpecialization.textContent = member.specialization;
+    modalBio.textContent = member.bio;
+    modalQuote.textContent = `"${member.quote}"`;
+    modalInstagram.href = member.instagram;
+    modalWhatsapp.href = member.whatsapp;
+
+    modal.classList.add('show');
+  }
+
+  function setupTeamModal() {
+    const modal = document.getElementById('teamModal');
+    if (!modal) return;
+
+    const closeBtn = document.querySelector('.team-modal-close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        modal.classList.remove('show');
+      });
+    }
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('show');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('show')) {
+        modal.classList.remove('show');
+      }
+    });
+  }
+
+  // Initialize team section
+  generateTeamCards();
+  // Initialize team section
+  console.log('Initializing team section...');
+  console.log('Team grid element:', document.getElementById('teamGrid'));
+  generateTeamCards();
+  setupTeamModal();
+  console.log('Team cards generated');
+  setupTeamModal();
 
 });

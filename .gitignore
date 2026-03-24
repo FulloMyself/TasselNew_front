@@ -1,12 +1,3 @@
-﻿# Large media files - exclude from git
-assets/images/*.jpeg
-assets/images/*.jpg
-assets/images/*.JPG
-assets/images/*.png
-
-# Keep compressed versions
-!assets/images/compressed_*
-
-# System files
+﻿# System files
 .DS_Store
 Thumbs.db
