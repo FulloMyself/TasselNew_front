@@ -12,6 +12,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Jost:wght@300;400;500&display=swap"
     rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- External CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -33,11 +35,13 @@
       <li><a href="#location">Find us</a></li>
       <li><a href="pricelists/full-menu.pdf" target="_blank">Prices</a></li>
     </ul>
-    <a href="#" class="nav-btn" onclick="openBookingModal(); return false;">📲 Book now</a>
+    <a href="#" class="nav-btn" onclick="openBookingModal(); return false;"><i class="fas fa-calendar-check"></i> Book
+      now</a>
   </nav>
 
   <!-- floating book button — always visible -->
-  <a href="#" class="float-book" onclick="openBookingModal(); return false;">📲 Book now</a>
+  <a href="#" class="float-book" onclick="openBookingModal(); return false;"><i class="fas fa-calendar-check"></i> Book
+    now</a>
 
   <!-- HERO CAROUSEL section -->
   <section id="hero" class="hero-carousel">
@@ -51,9 +55,10 @@
           <h1>Where <em>Kiddies Hair</em> meets <br>Luxury Family Beauty</h1>
           <p class="hero-sub">Premium Hair, Nails, Barber & Beauty — designed for families.</p>
           <div class="btn-group">
-            <a href="#" class="nav-btn" onclick="openBookingModal(); return false;">📲 Book now</a>
+            <a href="#" class="btn-primary" onclick="openBookingModal(); return false;"><i
+                class="fas fa-calendar-check"></i> Book Appointment</a>
             <a href="https://maps.google.com/?q=101+Bellairs+Drive+Glenvista+Johannesburg" class="btn-outline"
-              target="_blank">📍 Get Directions</a>
+              target="_blank"><i class="fas fa-location-dot"></i> Get Directions</a>
           </div>
         </div>
       </div>
@@ -66,8 +71,10 @@
           <h1>Sharp Cuts, <br><em>Modern Styles</em></h1>
           <p class="hero-sub">For boys, men & the whole family — precision cuts in a relaxed environment.</p>
           <div class="btn-group">
-            <a href="pricelists/barber.pdf" class="btn-primary" target="_blank">✂️ View Barber Prices</a>
-            <a href="#" class="nav-btn" onclick="openBookingModal(); return false;">💈 Book Barber Slot</a>
+            <a href="pricelists/barber.pdf" class="btn-primary" target="_blank"><i class="fas fa-cut"></i> View Barber
+              Prices</a>
+            <a href="#" class="btn-outline" onclick="openBookingModal(); return false;"><i class="fas fa-scissors"></i>
+              Book Barber Slot</a>
           </div>
         </div>
       </div>
@@ -80,16 +87,17 @@
           <h1>Parents & Kids <br><em>Pampered Together</em></h1>
           <p class="hero-sub">Hair, barber, nails & beauty services for the whole family.</p>
           <div class="btn-group">
-            <a href="#" class="nav-btn" onclick="openBookingModal(); return false;">📲 Book Family Visit</a>
-            <a href="#services" class="btn-outline">✨ Explore Services</a>
+            <a href="#" class="btn-primary" onclick="openBookingModal(); return false;"><i
+                class="fas fa-calendar-check"></i> Book Family Visit</a>
+            <a href="#services" class="btn-outline"><i class="fas fa-spa"></i> Explore Services</a>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Carousel controls -->
-    <button class="carousel-control prev" aria-label="Previous slide">❮</button>
-    <button class="carousel-control next" aria-label="Next slide">❯</button>
+    <button class="carousel-control prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+    <button class="carousel-control next" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
 
     <!-- Carousel indicators -->
     <div class="carousel-indicators">
@@ -147,38 +155,39 @@
           <p class="label fade">What we offer</p>
           <h2 class="fade" style="margin-bottom: 0;">Our services</h2>
         </div>
-        <a href="pricelists/full-menu.pdf" class="btn-primary" target="_blank" download>📋 View All Prices</a>
+        <a href="pricelists/full-menu.pdf" class="btn-primary" target="_blank" download><i class="fas fa-file-pdf"></i>
+          View All Prices</a>
       </div>
       <div class="services-grid">
         <a href="pricelists/kiddies-hair.pdf" class="service-card fade" target="_blank" download>
           <img src="assets/images/compressed_CuteBabyBraids.jpeg" alt="Child getting hair done" class="service-img"
             loading="lazy">
           <h3 class="service-name">Kiddies Hair</h3>
-          <span class="service-link">Download Price List</span>
+          <span class="service-link">Download Price List <i class="fas fa-download"></i></span>
         </a>
         <a href="pricelists/barber.pdf" class="service-card fade" target="_blank" download>
           <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=600&q=80" alt="Barber services"
             class="service-img" loading="lazy">
           <h3 class="service-name">Barber</h3>
-          <span class="service-link">Download Price List</span>
+          <span class="service-link">Download Price List <i class="fas fa-download"></i></span>
         </a>
         <a href="pricelists/adult-hair.pdf" class="service-card fade" target="_blank" download>
           <img src="assets/images/compressed_AdultHair.jpeg" alt="Woman's hair styled" class="service-img"
             loading="lazy">
           <h3 class="service-name">Adult Hair</h3>
-          <span class="service-link">Download Price List</span>
+          <span class="service-link">Download Price List <i class="fas fa-download"></i></span>
         </a>
         <a href="pricelists/nails.pdf" class="service-card fade" target="_blank" download>
           <img src="assets/images/compressed_TasselNailBar.jpeg" alt="Tassel Luxury Nail Bar" class="service-img"
             loading="lazy">
           <h3 class="service-name">Nails</h3>
-          <span class="service-link">Download Price List</span>
+          <span class="service-link">Download Price List <i class="fas fa-download"></i></span>
         </a>
         <a href="pricelists/skin-beauty.pdf" class="service-card fade" target="_blank" download>
           <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Facial treatment"
             class="service-img" loading="lazy">
           <h3 class="service-name">Skin & Beauty</h3>
-          <span class="service-link">Download Price List</span>
+          <span class="service-link">Download Price List <i class="fas fa-download"></i></span>
         </a>
       </div>
     </div>
@@ -193,21 +202,21 @@
           <h2 class="fade">Sharp Styles.<br><em>Confidence Boost.</em></h2>
           <div class="fade barber-features">
             <div class="feature-item">
-              <span class="feature-icon">✂️</span>
+              <span class="feature-icon"><i class="fas fa-cut"></i></span>
               <div>
                 <h4>Precision Haircuts</h4>
                 <p>Fades, tapers, scissor cuts & modern styles for all ages.</p>
               </div>
             </div>
             <div class="feature-item">
-              <span class="feature-icon">🧔</span>
+              <span class="feature-icon"><i class="fas fa-beard"></i></span>
               <div>
                 <h4>Beard Grooming</h4>
                 <p>Hot towel shaves, beard trims & shaping.</p>
               </div>
             </div>
             <div class="feature-item">
-              <span class="feature-icon">👦</span>
+              <span class="feature-icon"><i class="fas fa-child"></i></span>
               <div>
                 <h4>Kiddies Barber</h4>
                 <p>Gentle cuts for little gentlemen — patient & professional.</p>
@@ -215,8 +224,10 @@
             </div>
           </div>
           <div class="btn-group fade">
-            <a href="pricelists/barber.pdf" class="btn-primary" target="_blank">✂️ View Barber Prices</a>
-            <a href="#" class="nav-btn" onclick="openBookingModal(); return false;">💈 Book Now</a>
+            <a href="pricelists/barber.pdf" class="btn-primary" target="_blank"><i class="fas fa-cut"></i> View Barber
+              Prices</a>
+            <a href="#" class="btn-outline" onclick="openBookingModal(); return false;"><i class="fas fa-scissors"></i>
+              Book Now</a>
           </div>
         </div>
         <div class="barber-image fade">
@@ -241,12 +252,13 @@
             <div class="special-card featured">
               <img src="assets/specials/OpeningSpecials.jpeg" alt="FREE Kiddies Party Pack Special"
                 class="special-poster" loading="lazy">
-              <div class="special-badge">🔥 HOT DEAL</div>
+              <div class="special-badge"><i class="fas fa-fire"></i> HOT DEAL</div>
               <div class="special-overlay">
                 <h3>FREE Kiddies Party Pack</h3>
                 <p>With any kiddies haircut or styling service</p>
                 <div class="special-valid">Valid until: 30 April 2026</div>
-                <a href="https://wa.me/27729605153" class="btn-special">Claim Now →</a>
+                <a href="#" class="btn-special" onclick="openBookingModal(); return false;"><i
+                    class="fas fa-arrow-right"></i> Claim Now</a>
               </div>
             </div>
           </div>
@@ -260,7 +272,8 @@
                 <h3>Midweek Glow</h3>
                 <p>With any beauty service (facial, waxing, or nail treatment)</p>
                 <div class="special-valid">Limited time offer</div>
-                <a href="https://wa.me/27729605153" class="btn-special">Book Now →</a>
+                <a href="#" class="btn-special" onclick="openBookingModal(); return false;"><i
+                    class="fas fa-arrow-right"></i> Book Now</a>
               </div>
             </div>
           </div>
@@ -274,7 +287,8 @@
                 <h3>Waxy Wednesdays</h3>
                 <p>With any beauty service (facial, waxing, or nail treatment)</p>
                 <div class="special-valid">Limited time offer</div>
-                <a href="https://wa.me/27729605153" class="btn-special">Book Now →</a>
+                <a href="#" class="btn-special" onclick="openBookingModal(); return false;"><i
+                    class="fas fa-arrow-right"></i> Book Now</a>
               </div>
             </div>
           </div>
@@ -288,14 +302,17 @@
                 <h3>Daddy & Mini Special</h3>
                 <p>With any beauty service (facial, waxing, or nail treatment)</p>
                 <div class="special-valid">Limited time offer</div>
-                <a href="https://wa.me/27729605153" class="btn-special">Book Now →</a>
+                <a href="#" class="btn-special" onclick="openBookingModal(); return false;"><i
+                    class="fas fa-arrow-right"></i> Book Now</a>
               </div>
             </div>
           </div>
 
           <!-- Carousel Navigation -->
-          <button class="specials-nav prev" id="specialsPrev" aria-label="Previous special">❮</button>
-          <button class="specials-nav next" id="specialsNext" aria-label="Next special">❯</button>
+          <button class="specials-nav prev" id="specialsPrev" aria-label="Previous special"><i
+              class="fas fa-chevron-left"></i></button>
+          <button class="specials-nav next" id="specialsNext" aria-label="Next special"><i
+              class="fas fa-chevron-right"></i></button>
         </div>
 
         <!-- Carousel Indicators -->
@@ -339,18 +356,18 @@
       <!-- Media Type Toggle -->
       <div class="media-toggle fade">
         <button class="media-btn active" data-media="all">All Media</button>
-        <button class="media-btn" data-media="photo">Photos</button>
-        <button class="media-btn" data-media="video">Videos</button>
+        <button class="media-btn" data-media="photo"><i class="fas fa-image"></i> Photos</button>
+        <button class="media-btn" data-media="video"><i class="fas fa-video"></i> Videos</button>
       </div>
 
       <!-- Gallery filter tabs -->
       <div class="gallery-filter fade">
         <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="kids">Kiddies</button>
-        <button class="filter-btn" data-filter="barber">Barber</button>
-        <button class="filter-btn" data-filter="hair">Hair</button>
-        <button class="filter-btn" data-filter="nails">Nails</button>
-        <button class="filter-btn" data-filter="studio">Studio</button>
+        <button class="filter-btn" data-filter="kids"><i class="fas fa-child"></i> Kiddies</button>
+        <button class="filter-btn" data-filter="barber"><i class="fas fa-cut"></i> Barber</button>
+        <button class="filter-btn" data-filter="hair"><i class="fas fa-hand-sparkles"></i> Hair</button>
+        <button class="filter-btn" data-filter="nails"><i class="fas fa-hand-peace"></i> Nails</button>
+        <button class="filter-btn" data-filter="studio"><i class="fas fa-couch"></i> Studio</button>
       </div>
 
       <!-- Gallery grid with mixed photos and videos -->
@@ -377,7 +394,7 @@
             <source src="assets/videos/MensCutAndWash.mp4" type="video/MOV">
             Your browser does not support the video tag.
           </video>
-          <div class="video-play-icon">▶</div>
+          <div class="video-play-icon"><i class="fas fa-play"></i></div>
           <div class="gallery-overlay">
             <span>Men's Haircut Session</span>
           </div>
@@ -403,7 +420,7 @@
             <source src="assets/videos/Welcome.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <div class="video-play-icon">▶</div>
+          <div class="video-play-icon"><i class="fas fa-play"></i></div>
           <div class="gallery-overlay">
             <span>Welcome To Tassel</span>
           </div>
@@ -422,7 +439,7 @@
             <source src="assets/videos/Tassel.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <div class="video-play-icon">▶</div>
+          <div class="video-play-icon"><i class="fas fa-play"></i></div>
           <div class="gallery-overlay">
             <span>Book With Us</span>
           </div>
@@ -440,9 +457,9 @@
             <source src="assets/videos/BarbarSection.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <div class="video-play-icon">▶</div>
+          <div class="video-play-icon"><i class="fas fa-play"></i></div>
           <div class="gallery-overlay">
-            <span>Barbar Section</span>
+            <span>Barber Section</span>
           </div>
         </div>
 
@@ -452,7 +469,7 @@
             <source src="assets/videos/Books.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <div class="video-play-icon">▶</div>
+          <div class="video-play-icon"><i class="fas fa-play"></i></div>
           <div class="gallery-overlay">
             <span>Kiddies Corner</span>
           </div>
@@ -461,14 +478,14 @@
 
       <!-- Lightbox Modal (for both images and videos) -->
       <div class="lightbox" id="lightbox">
-        <span class="lightbox-close">&times;</span>
+        <span class="lightbox-close"><i class="fas fa-times"></i></span>
         <div class="lightbox-content-container">
           <img class="lightbox-img" id="lightbox-img" style="display: none;">
           <video class="lightbox-video" id="lightbox-video" controls style="display: none;"></video>
         </div>
         <div class="lightbox-caption" id="lightbox-caption"></div>
-        <button class="lightbox-prev">❮</button>
-        <button class="lightbox-next">❯</button>
+        <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-next"><i class="fas fa-chevron-right"></i></button>
       </div>
     </div>
   </section>
@@ -493,8 +510,8 @@
             <p>From gentle kiddies styling to sharp barber cuts, nails, skin and beauty treatments, every detail is
               designed to deliver a premium experience built on care, comfort and excellence.</p>
           </div>
-          <a href="https://wa.me/27729605153" class="btn-primary fade" target="_blank" style="margin-top: 2rem;">📲 Book
-            your visit</a>
+          <a href="#" class="btn-primary" onclick="openBookingModal(); return false;"><i
+              class="fas fa-calendar-check"></i> Book Your Visit</a>
         </div>
       </div>
     </div>
@@ -519,7 +536,7 @@
   <!-- Team Member Modal (hidden by default) -->
   <div class="team-modal" id="teamModal">
     <div class="team-modal-content">
-      <span class="team-modal-close">&times;</span>
+      <span class="team-modal-close"><i class="fas fa-times"></i></span>
       <div class="team-modal-inner">
         <div class="team-modal-image">
           <img id="modalImage" src="" alt="Team member">
@@ -531,9 +548,12 @@
           <p class="modal-bio" id="modalBio"></p>
           <p class="modal-quote" id="modalQuote"></p>
           <div class="modal-social">
-            <a href="#" id="modalInstagram" target="_blank" class="social-link">📷 Instagram</a>
-            <a href="#" id="modalWhatsapp" target="_blank" class="social-link">💬 WhatsApp</a>
-            <a href="https://wa.me/27729605153" class="social-link book-link">📲 Book Appointment</a>
+            <a href="#" id="modalInstagram" target="_blank" class="social-link"><i class="fab fa-instagram"></i>
+              Instagram</a>
+            <a href="#" id="modalWhatsapp" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i>
+              WhatsApp</a>
+            <a href="#" class="btn-primary" onclick="openBookingModal(); return false;"><i
+                class="fas fa-calendar-check"></i> Book Appointment</a>
           </div>
         </div>
       </div>
@@ -602,11 +622,11 @@
       <p class="reviews-intro fade">Real feedback from our wonderful clients</p>
 
       <div class="reviews-grid" id="reviewsGrid">
-        <!-- Google Review - Kamo's Pedicure Experience (New) -->
+        <!-- Google Review - Kamo's Pedicure Experience -->
         <div class="review-card google-featured fade">
           <div class="review-header">
             <div class="reviewer-info">
-              <div class="reviewer-avatar">✨</div>
+              <div class="reviewer-avatar"><i class="fas fa-star"></i></div>
               <div class="reviewer-details">
                 <h4>Google Review</h4>
                 <div class="review-rating">
@@ -616,7 +636,7 @@
               </div>
             </div>
             <div class="review-source">
-              <span class="google-badge">Google</span>
+              <span class="google-badge"><i class="fab fa-google"></i> Google</span>
               <span class="review-age">11 months ago</span>
             </div>
           </div>
@@ -628,8 +648,8 @@
               an amazing experience, I'm must definitely coming back."</p>
           </div>
           <div class="review-footer">
-            <span class="review-date">~11 months ago</span>
-            <span class="review-service">Pedicure, Massage, Facial</span>
+            <span class="review-date"><i class="far fa-calendar-alt"></i> ~11 months ago</span>
+            <span class="review-service"><i class="fas fa-hand-sparkles"></i> Pedicure, Massage, Facial</span>
           </div>
         </div>
 
@@ -647,7 +667,7 @@
               </div>
             </div>
             <div class="review-source">
-              <span class="whatsapp-badge">📱 WhatsApp</span>
+              <span class="whatsapp-badge"><i class="fab fa-whatsapp"></i> WhatsApp</span>
             </div>
           </div>
           <div class="review-content">
@@ -659,9 +679,9 @@
               continue to bless your business & creativity sis."</p>
           </div>
           <div class="review-footer">
-            <span class="review-date">March 2026</span>
-            <span class="review-service">Kiddies Hair</span>
-            <span class="review-badge">⭐ Featured Review</span>
+            <span class="review-date"><i class="far fa-calendar-alt"></i> March 2026</span>
+            <span class="review-service"><i class="fas fa-child"></i> Kiddies Hair</span>
+            <span class="review-badge"><i class="fas fa-star"></i> Featured Review</span>
           </div>
         </div>
 
@@ -679,17 +699,17 @@
               </div>
             </div>
             <div class="review-source">
-              <span class="whatsapp-badge">📱 WhatsApp</span>
+              <span class="whatsapp-badge"><i class="fab fa-whatsapp"></i> WhatsApp</span>
             </div>
           </div>
           <div class="review-content">
             <p class="review-text">"The absolute best service ever! The ladies are so happy here, they are calmer and
               relaxed. Your studio is absolutely gorgeous and breathtaking, well done mommy! No tears at all on all
-              stages. From wash, to treatment to plait. Totally love it ❤️"</p>
+              stages. From wash, to treatment to plait. Totally love it"</p>
           </div>
           <div class="review-footer">
-            <span class="review-date">March 2026</span>
-            <span class="review-service">Kiddies Hair</span>
+            <span class="review-date"><i class="far fa-calendar-alt"></i> March 2026</span>
+            <span class="review-service"><i class="fas fa-child"></i> Kiddies Hair</span>
           </div>
         </div>
       </div>
@@ -706,14 +726,14 @@
         </div>
         <div class="review-actions">
           <a href="#" class="btn-review whatsapp-review" onclick="openReviewModal(); return false;">
-            📱 Leave a WhatsApp Review
+            <i class="fab fa-whatsapp"></i> Leave a WhatsApp Review
           </a>
           <a href="https://www.google.com/search?q=Tassel+Hair+and+Beauty+Studio+Reviews"
             class="btn-review google-review" target="_blank">
-            ⭐ Leave a Google Review
+            <i class="fab fa-google"></i> Leave a Google Review
           </a>
         </div>
-        <p class="review-note">Your feedback helps us grow and serve you better! 💕</p>
+        <p class="review-note">Your feedback helps us grow and serve you better!</p>
       </div>
     </div>
   </section>
@@ -726,21 +746,21 @@
         <h2 class="location-title fade">Visit Tassel in<br>Glenvista</h2>
         <div class="loc-detail fade">
           <div class="loc-item">
-            <span class="loc-icon">📍</span>
+            <span class="loc-icon"><i class="fas fa-location-dot"></i></span>
             <div class="loc-text">
               <strong>Address</strong>
               <p>101 Bellairs Drive, Glenvista<br>Johannesburg South</p>
             </div>
           </div>
           <div class="loc-item">
-            <span class="loc-icon">📲</span>
+            <span class="loc-icon"><i class="fab fa-whatsapp"></i></span>
             <div class="loc-text">
               <strong>WhatsApp bookings</strong>
               <p>072 960 5153</p>
             </div>
           </div>
           <div class="loc-item">
-            <span class="loc-icon">🚶</span>
+            <span class="loc-icon"><i class="fas fa-walking"></i></span>
             <div class="loc-text">
               <strong>Walk‑ins</strong>
               <p>Welcome — subject to availability</p>
@@ -748,9 +768,10 @@
           </div>
         </div>
         <div class="fade" style="display: flex; gap: 1rem; flex-wrap: wrap;">
-          <a href="https://wa.me/27729605153" class="btn-gold" target="_blank">📲 WhatsApp Us</a>
+          <a href="https://wa.me/27729605153" class="btn-gold" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp
+            Us</a>
           <a href="https://maps.google.com/?q=101+Bellairs+Drive+Glenvista+Johannesburg" class="btn-ghost-light"
-            target="_blank">📍 Google Maps</a>
+            target="_blank"><i class="fas fa-map-marker-alt"></i> Google Maps</a>
         </div>
       </div>
       <div class="map-box fade">
@@ -774,7 +795,7 @@
       <a href="#reviews">Reviews</a>
       <a href="#location">Find us</a>
     </div>
-    <p>© 2026 Tassel · Glenvista, JHB South</p>
+    <p><i class="far fa-copyright"></i> 2026 Tassel · Glenvista, JHB South</p>
   </footer>
 
   <!-- External JavaScript -->
@@ -783,7 +804,7 @@
   <!-- Booking Form Modal -->
   <div class="booking-modal" id="bookingModal">
     <div class="booking-modal-content">
-      <span class="booking-modal-close">&times;</span>
+      <span class="booking-modal-close"><i class="fas fa-times"></i></span>
       <div class="booking-modal-header">
         <h2>Book Your Appointment</h2>
         <p>Fill in your details and we'll confirm your booking via WhatsApp</p>
@@ -792,20 +813,20 @@
       <form id="bookingForm" class="booking-form">
         <!-- Service Category Selection -->
         <div class="form-group">
-          <label for="serviceCategory">Select Service Category *</label>
+          <label for="serviceCategory"><i class="fas fa-tag"></i> Select Service Category *</label>
           <select id="serviceCategory" name="serviceCategory" required>
             <option value="">Choose a service category</option>
-            <option value="Kiddies Hair">👧 Kiddies Hair</option>
-            <option value="Barber">✂️ Barber Services</option>
-            <option value="Adult Hair">💇‍♀️ Adult Hair</option>
-            <option value="Nails">💅 Nails</option>
-            <option value="Skin & Beauty">🌿 Skin & Beauty</option>
+            <option value="Kiddies Hair">Kiddies Hair</option>
+            <option value="Barber">Barber Services</option>
+            <option value="Adult Hair">Adult Hair</option>
+            <option value="Nails">Nails</option>
+            <option value="Skin & Beauty">Skin & Beauty</option>
           </select>
         </div>
 
         <!-- Service Details (auto-filled based on category) -->
         <div class="form-group" id="serviceDetailsGroup" style="display: none;">
-          <label for="serviceDetails">Select Service *</label>
+          <label for="serviceDetails"><i class="fas fa-list"></i> Select Service *</label>
           <select id="serviceDetails" name="serviceDetails" required>
             <option value="">Select a specific service</option>
           </select>
@@ -814,29 +835,29 @@
         <!-- Personal Details -->
         <div class="form-row">
           <div class="form-group">
-            <label for="fullName">Full Name *</label>
+            <label for="fullName"><i class="fas fa-user"></i> Full Name *</label>
             <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
           </div>
           <div class="form-group">
-            <label for="phoneNumber">Phone Number *</label>
+            <label for="phoneNumber"><i class="fas fa-phone"></i> Phone Number *</label>
             <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="072 960 5153" required>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label for="email">Email Address</label>
+            <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
             <input type="email" id="email" name="email" placeholder="your@email.com">
           </div>
           <div class="form-group">
-            <label for="preferredDate">Preferred Date *</label>
+            <label for="preferredDate"><i class="fas fa-calendar"></i> Preferred Date *</label>
             <input type="date" id="preferredDate" name="preferredDate" required>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label for="preferredTime">Preferred Time *</label>
+            <label for="preferredTime"><i class="fas fa-clock"></i> Preferred Time *</label>
             <select id="preferredTime" name="preferredTime" required>
               <option value="">Select time slot</option>
               <option value="09:00">09:00 AM</option>
@@ -851,7 +872,7 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="numberOfPeople">Number of People</label>
+            <label for="numberOfPeople"><i class="fas fa-users"></i> Number of People</label>
             <select id="numberOfPeople" name="numberOfPeople">
               <option value="1">1 person</option>
               <option value="2">2 people</option>
@@ -862,7 +883,7 @@
         </div>
 
         <div class="form-group">
-          <label for="specialRequests">Special Requests or Notes</label>
+          <label for="specialRequests"><i class="fas fa-pen"></i> Special Requests or Notes</label>
           <textarea id="specialRequests" name="specialRequests" rows="3"
             placeholder="Any special requests, allergies, or additional information..."></textarea>
         </div>
@@ -871,13 +892,14 @@
         <input type="hidden" id="selectedServiceDetails" name="selectedServiceDetails">
 
         <div class="form-buttons">
-          <button type="button" class="btn-cancel" id="cancelBookingBtn">Cancel</button>
-          <button type="submit" class="btn-submit">📲 Send Booking Request</button>
+          <button type="button" class="btn-cancel" id="cancelBookingBtn"><i class="fas fa-times"></i> Cancel</button>
+          <button type="submit" class="btn-submit"><i class="fab fa-whatsapp"></i> Send Booking Request</button>
         </div>
       </form>
 
       <div class="booking-note">
-        <p>✨ You'll be redirected to WhatsApp to confirm your booking. A member of our team will respond shortly.</p>
+        <p><i class="fas fa-info-circle"></i> You'll be redirected to WhatsApp to confirm your booking. A member of our
+          team will respond shortly.</p>
       </div>
     </div>
   </div>
@@ -885,7 +907,7 @@
   <!-- Review Modal -->
   <div class="review-modal" id="reviewModal">
     <div class="review-modal-content">
-      <span class="review-modal-close">&times;</span>
+      <span class="review-modal-close"><i class="fas fa-times"></i></span>
       <div class="review-modal-header">
         <h2>Share Your Experience</h2>
         <p>We'd love to hear about your visit to Tassel!</p>
@@ -894,7 +916,7 @@
       <form id="reviewForm" class="review-form">
         <!-- Rating Section -->
         <div class="form-group rating-group">
-          <label>Your Rating *</label>
+          <label><i class="fas fa-star"></i> Your Rating *</label>
           <div class="star-rating" id="starRating">
             <span class="star-rating-star" data-rating="1">☆</span>
             <span class="star-rating-star" data-rating="2">☆</span>
@@ -908,42 +930,42 @@
         <!-- Personal Details -->
         <div class="form-row">
           <div class="form-group">
-            <label for="reviewName">Your Name *</label>
+            <label for="reviewName"><i class="fas fa-user"></i> Your Name *</label>
             <input type="text" id="reviewName" name="name" placeholder="Enter your name" required>
           </div>
           <div class="form-group">
-            <label for="reviewService">Service Received *</label>
+            <label for="reviewService"><i class="fas fa-tag"></i> Service Received *</label>
             <select id="reviewService" name="service" required>
               <option value="">Select service</option>
-              <option value="Kiddies Hair">👧 Kiddies Hair</option>
-              <option value="Barber">✂️ Barber</option>
-              <option value="Adult Hair">💇‍♀️ Adult Hair</option>
-              <option value="Nails">💅 Nails</option>
-              <option value="Skin & Beauty">🌿 Skin & Beauty</option>
-              <option value="Multiple Services">✨ Multiple Services</option>
+              <option value="Kiddies Hair">Kiddies Hair</option>
+              <option value="Barber">Barber</option>
+              <option value="Adult Hair">Adult Hair</option>
+              <option value="Nails">Nails</option>
+              <option value="Skin & Beauty">Skin & Beauty</option>
+              <option value="Multiple Services">Multiple Services</option>
             </select>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label for="reviewStaff">Staff Member (Optional)</label>
+            <label for="reviewStaff"><i class="fas fa-user-tie"></i> Staff Member (Optional)</label>
             <input type="text" id="reviewStaff" name="staff" placeholder="e.g., Kamo, Sandra, Natasha">
           </div>
           <div class="form-group">
-            <label for="reviewDate">Visit Date *</label>
+            <label for="reviewDate"><i class="fas fa-calendar"></i> Visit Date *</label>
             <input type="date" id="reviewDate" name="date" required>
           </div>
         </div>
 
         <!-- Review Content -->
         <div class="form-group">
-          <label for="reviewTitle">Review Title *</label>
+          <label for="reviewTitle"><i class="fas fa-heading"></i> Review Title *</label>
           <input type="text" id="reviewTitle" name="title" placeholder="Summarize your experience" required>
         </div>
 
         <div class="form-group">
-          <label for="reviewMessage">Your Review *</label>
+          <label for="reviewMessage"><i class="fas fa-comment"></i> Your Review *</label>
           <textarea id="reviewMessage" name="message" rows="5"
             placeholder="Tell us about your experience... What did you love? How was the service? Would you recommend us?"
             required></textarea>
@@ -951,25 +973,25 @@
 
         <!-- Highlights -->
         <div class="form-group">
-          <label>What did you love most? (Select all that apply)</label>
+          <label><i class="fas fa-heart"></i> What did you love most? (Select all that apply)</label>
           <div class="highlight-options">
             <label class="checkbox-label">
-              <input type="checkbox" name="highlights" value="Service Quality"> ⭐ Service Quality
+              <input type="checkbox" name="highlights" value="Service Quality"> Service Quality
             </label>
             <label class="checkbox-label">
-              <input type="checkbox" name="highlights" value="Staff Friendliness"> 😊 Staff Friendliness
+              <input type="checkbox" name="highlights" value="Staff Friendliness"> Staff Friendliness
             </label>
             <label class="checkbox-label">
-              <input type="checkbox" name="highlights" value="Ambiance"> 🏠 Ambiance
+              <input type="checkbox" name="highlights" value="Ambiance"> Ambiance
             </label>
             <label class="checkbox-label">
-              <input type="checkbox" name="highlights" value="Kiddies Care"> 👧 Kiddies Care
+              <input type="checkbox" name="highlights" value="Kiddies Care"> Kiddies Care
             </label>
             <label class="checkbox-label">
-              <input type="checkbox" name="highlights" value="Product Quality"> 🧴 Product Quality
+              <input type="checkbox" name="highlights" value="Product Quality"> Product Quality
             </label>
             <label class="checkbox-label">
-              <input type="checkbox" name="highlights" value="Value for Money"> 💰 Value for Money
+              <input type="checkbox" name="highlights" value="Value for Money"> Value for Money
             </label>
           </div>
         </div>
@@ -978,18 +1000,20 @@
         <div class="form-group permission-group">
           <label class="checkbox-label">
             <input type="checkbox" id="reviewPermission" name="permission" required>
-            I give permission for Tassel to share my review (first name only) on the website and social media
+            <i class="fas fa-check-circle"></i> I give permission for Tassel to share my review (first name only) on the
+            website and social media
           </label>
         </div>
 
         <div class="form-buttons">
-          <button type="button" class="btn-cancel" id="cancelReviewBtn">Cancel</button>
-          <button type="submit" class="btn-submit">📱 Send Review via WhatsApp</button>
+          <button type="button" class="btn-cancel" id="cancelReviewBtn"><i class="fas fa-times"></i> Cancel</button>
+          <button type="submit" class="btn-submit"><i class="fab fa-whatsapp"></i> Send Review via WhatsApp</button>
         </div>
       </form>
 
       <div class="review-note">
-        <p>✨ Your review will be sent to us via WhatsApp. We appreciate your feedback!</p>
+        <p><i class="fas fa-info-circle"></i> Your review will be sent to us via WhatsApp. We appreciate your feedback!
+        </p>
       </div>
     </div>
   </div>

@@ -2748,3 +2748,60 @@ footer {
   color: var(--muted);
   border-top: 1px solid rgba(154, 128, 96, 0.1);
 }
+
+/* Icon styling */
+.fas,
+.far,
+.fab {
+  margin-right: 8px;
+}
+
+/* Button icons */
+.btn-primary i,
+.btn-outline i,
+.nav-btn i,
+.float-book i {
+  margin-right: 8px;
+}
+
+/* Social icons */
+.social-icon i {
+  margin-right: 0;
+}
+
+/* Feature icons */
+.feature-icon i {
+  font-size: 1.8rem;
+  color: var(--gold);
+}
+
+/* Review icons */
+.review-date i,
+.review-service i {
+  margin-right: 5px;
+  font-size: 0.7rem;
+}
+
+/* Location icons */
+.loc-icon i {
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+
+/* Form icons */
+.form-group label i {
+  margin-right: 8px;
+  color: var(--gold);
+  width: 20px;
+}
+
+/* Carousel controls */
+.carousel-control i {
+  margin-right: 0;
+}
+
+/* Video play icon */
+.video-play-icon i {
+  margin-right: 0;
+  font-size: 24px;
+}
