@@ -37,7 +37,7 @@
   </nav>
 
   <!-- floating book button — always visible -->
-  <a href="https://wa.me/27729605153" class="float-book" target="_blank">📲 Book now</a>
+  <a href="#" class="float-book" onclick="openBookingModal(); return false;">📲 Book now</a>
 
   <!-- HERO CAROUSEL section -->
   <section id="hero" class="hero-carousel">
@@ -51,7 +51,7 @@
           <h1>Where <em>Kiddies Hair</em> meets <br>Luxury Family Beauty</h1>
           <p class="hero-sub">Premium Hair, Nails, Barber & Beauty — designed for families.</p>
           <div class="btn-group">
-            <a href="https://wa.me/27729605153" class="btn-primary" target="_blank">📲 Book Appointment</a>
+            <a href="#" class="nav-btn" onclick="openBookingModal(); return false;">📲 Book now</a>
             <a href="https://maps.google.com/?q=101+Bellairs+Drive+Glenvista+Johannesburg" class="btn-outline"
               target="_blank">📍 Get Directions</a>
           </div>
@@ -67,7 +67,7 @@
           <p class="hero-sub">For boys, men & the whole family — precision cuts in a relaxed environment.</p>
           <div class="btn-group">
             <a href="pricelists/barber.pdf" class="btn-primary" target="_blank">✂️ View Barber Prices</a>
-            <a href="https://wa.me/27729605153" class="btn-outline" target="_blank">💈 Book Barber Slot</a>
+            <a href="#" class="nav-btn" onclick="openBookingModal(); return false;">💈 Book Barber Slot</a>
           </div>
         </div>
       </div>
@@ -80,7 +80,7 @@
           <h1>Parents & Kids <br><em>Pampered Together</em></h1>
           <p class="hero-sub">Hair, barber, nails & beauty services for the whole family.</p>
           <div class="btn-group">
-            <a href="https://wa.me/27729605153" class="btn-primary" target="_blank">📲 Book Family Visit</a>
+            <a href="#" class="nav-btn" onclick="openBookingModal(); return false;">📲 Book Family Visit</a>
             <a href="#services" class="btn-outline">✨ Explore Services</a>
           </div>
         </div>
@@ -216,7 +216,7 @@
           </div>
           <div class="btn-group fade">
             <a href="pricelists/barber.pdf" class="btn-primary" target="_blank">✂️ View Barber Prices</a>
-            <a href="https://wa.me/27729605153" class="btn-outline" target="_blank">💈 Book Now</a>
+            <a href="#" class="nav-btn" onclick="openBookingModal(); return false;">💈 Book Now</a>
           </div>
         </div>
         <div class="barber-image fade">
@@ -397,9 +397,21 @@
           </div>
         </div>
 
+        <!-- VIDEO 2: Welcome To Tassel -->
+        <div class="gallery-item video-item fade" data-category="Welcome To Tassel" data-media="video">
+          <video class="gallery-video" poster="assets/images/compressed_Receptionist.jpeg">
+            <source src="assets/videos/Welcome.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-play-icon">▶</div>
+          <div class="gallery-overlay">
+            <span>Welcome To Tassel</span>
+          </div>
+        </div>
+
         <!-- VIDEO 3: Kiddies Books -->
         <div class="gallery-item video-item fade" data-category="kiddies books" data-media="video">
-          <video class="gallery-video" poster="assets/images/compressed_KiddiesStation.jpeg">
+          <video class="gallery-video" poster="assets/images/KiddiesCorner.jpeg">
             <source src="assets/videos/Books.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
