@@ -33,7 +33,7 @@
       <li><a href="#location">Find us</a></li>
       <li><a href="pricelists/full-menu.pdf" target="_blank">Prices</a></li>
     </ul>
-    <a href="https://wa.me/27729605153" class="nav-btn" target="_blank">📲 Book now</a>
+    <a href="#" class="nav-btn" onclick="openBookingModal(); return false;">📲 Book now</a>
   </nav>
 
   <!-- floating book button — always visible -->
@@ -265,7 +265,7 @@
             </div>
           </div>
 
-                    <!-- Special Poster 3: Waxy Wednesdays -->
+          <!-- Special Poster 3: Waxy Wednesdays -->
           <div class="special-slide">
             <div class="special-card">
               <img src="assets/specials/WaxyWednesdays.jpeg" alt="Waxy Wednesdays Special" class="special-poster"
@@ -279,7 +279,7 @@
             </div>
           </div>
 
-                    <!-- Special Poster 4: Daddy & Mini Special -->
+          <!-- Special Poster 4: Daddy & Mini Special -->
           <div class="special-slide">
             <div class="special-card">
               <img src="assets/specials/DadxMiniSpecial.jpeg" alt="Daddy & Mini Special" class="special-poster"
@@ -357,16 +357,15 @@
       <div class="gallery-grid" id="galleryGrid">
         <!-- PHOTOS -->
         <div class="gallery-item fade" data-category="kids" data-media="photo">
-          <img src="assets/images/compressed_CuteBabyBraids.jpeg" alt="Kids hairstyling"
-            loading="lazy">
+          <img src="assets/images/compressed_CuteBabyBraids.jpeg" alt="Kids hairstyling" loading="lazy">
           <div class="gallery-overlay">
             <span>Kiddies Braiding</span>
           </div>
         </div>
 
         <div class="gallery-item fade" data-category="studio" data-media="photo">
-          <img src="assets/images/compressed_KiddiesStation.jpeg" alt="Kiddies Station, our favourite part of the studio"
-            loading="lazy">
+          <img src="assets/images/compressed_KiddiesStation.jpeg"
+            alt="Kiddies Station, our favourite part of the studio" loading="lazy">
           <div class="gallery-overlay">
             <span>Kiddies Station</span>
           </div>
@@ -385,16 +384,14 @@
         </div>
 
         <div class="gallery-item fade" data-category="hair" data-media="photo">
-          <img src="assets/images/compressed_AdultHair.jpeg" alt="Adult haircut"
-            loading="lazy">
+          <img src="assets/images/compressed_AdultHair.jpeg" alt="Adult haircut" loading="lazy">
           <div class="gallery-overlay">
             <span>Professional Styling</span>
           </div>
         </div>
 
         <div class="gallery-item fade" data-category="kids" data-media="photo">
-          <img src="assets/images/KiddiesHairstyleSession.jpeg" alt="Happy child, great session"
-            loading="lazy">
+          <img src="assets/images/KiddiesHairstyleSession.jpeg" alt="Happy child, great session" loading="lazy">
           <div class="gallery-overlay">
             <span>Kiddies Hairstyle Session</span>
           </div>
@@ -425,16 +422,14 @@
         </div>
 
         <div class="gallery-item fade" data-category="studio" data-media="photo">
-          <img src="assets/images/compressed_Seat.jpeg" alt="Salon waiting area"
-            loading="lazy">
+          <img src="assets/images/compressed_Seat.jpeg" alt="Salon waiting area" loading="lazy">
           <div class="gallery-overlay">
             <span>Relaxation Lounge</span>
           </div>
         </div>
 
         <div class="gallery-item fade" data-category="barber" data-media="photo">
-          <img src="assets/images/BoysHairCut.jpeg" alt="Boy's Haircut"
-            loading="lazy">
+          <img src="assets/images/BoysHairCut.jpeg" alt="Boy's Haircut" loading="lazy">
           <div class="gallery-overlay">
             <span>Barber Action</span>
           </div>
@@ -636,6 +631,108 @@
 
   <!-- External JavaScript -->
   <script src="script.js"></script>
+
+  <!-- Booking Form Modal -->
+  <div class="booking-modal" id="bookingModal">
+    <div class="booking-modal-content">
+      <span class="booking-modal-close">&times;</span>
+      <div class="booking-modal-header">
+        <h2>Book Your Appointment</h2>
+        <p>Fill in your details and we'll confirm your booking via WhatsApp</p>
+      </div>
+
+      <form id="bookingForm" class="booking-form">
+        <!-- Service Category Selection -->
+        <div class="form-group">
+          <label for="serviceCategory">Select Service Category *</label>
+          <select id="serviceCategory" name="serviceCategory" required>
+            <option value="">Choose a service category</option>
+            <option value="Kiddies Hair">👧 Kiddies Hair</option>
+            <option value="Barber">✂️ Barber Services</option>
+            <option value="Adult Hair">💇‍♀️ Adult Hair</option>
+            <option value="Nails">💅 Nails</option>
+            <option value="Skin & Beauty">🌿 Skin & Beauty</option>
+          </select>
+        </div>
+
+        <!-- Service Details (auto-filled based on category) -->
+        <div class="form-group" id="serviceDetailsGroup" style="display: none;">
+          <label for="serviceDetails">Select Service *</label>
+          <select id="serviceDetails" name="serviceDetails" required>
+            <option value="">Select a specific service</option>
+          </select>
+        </div>
+
+        <!-- Personal Details -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullName">Full Name *</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number *</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="072 960 5153" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label for="preferredDate">Preferred Date *</label>
+            <input type="date" id="preferredDate" name="preferredDate" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="preferredTime">Preferred Time *</label>
+            <select id="preferredTime" name="preferredTime" required>
+              <option value="">Select time slot</option>
+              <option value="09:00">09:00 AM</option>
+              <option value="10:00">10:00 AM</option>
+              <option value="11:00">11:00 AM</option>
+              <option value="12:00">12:00 PM</option>
+              <option value="13:00">01:00 PM</option>
+              <option value="14:00">02:00 PM</option>
+              <option value="15:00">03:00 PM</option>
+              <option value="16:00">04:00 PM</option>
+              <option value="17:00">05:00 PM</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="numberOfPeople">Number of People</label>
+            <select id="numberOfPeople" name="numberOfPeople">
+              <option value="1">1 person</option>
+              <option value="2">2 people</option>
+              <option value="3">3 people</option>
+              <option value="4">4+ people</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="specialRequests">Special Requests or Notes</label>
+          <textarea id="specialRequests" name="specialRequests" rows="3"
+            placeholder="Any special requests, allergies, or additional information..."></textarea>
+        </div>
+
+        <!-- Hidden field for selected service details -->
+        <input type="hidden" id="selectedServiceDetails" name="selectedServiceDetails">
+
+        <div class="form-buttons">
+          <button type="button" class="btn-cancel" id="cancelBookingBtn">Cancel</button>
+          <button type="submit" class="btn-submit">📲 Send Booking Request</button>
+        </div>
+      </form>
+
+      <div class="booking-note">
+        <p>✨ You'll be redirected to WhatsApp to confirm your booking. A member of our team will respond shortly.</p>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

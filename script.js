@@ -555,6 +555,238 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // ========== BOOKING FORM DATA ==========
+  const serviceDetails = {
+    "Kiddies Hair": [
+      "Haircut & Style",
+      "Braiding",
+      "School-friendly Hairstyle",
+      "Kids Party Package",
+      "Hair Treatment",
+      "Kiddies Wash & Blow-dry"
+    ],
+    "Barber": [
+      "Men's Haircut (Fade)",
+      "Men's Haircut (Scissor Cut)",
+      "Beard Trim & Shape",
+      "Hot Towel Shave",
+      "Boys Haircut",
+      "Beard & Haircut Combo"
+    ],
+    "Adult Hair": [
+      "Women's Haircut",
+      "Hair Coloring",
+      "Highlights",
+      "Balayage",
+      "Keratin Treatment",
+      "Wash & Blow-dry",
+      "Styling (Braids/Updo)"
+    ],
+    "Nails": [
+      "Classic Manicure",
+      "Luxury Manicure",
+      "Classic Pedicure",
+      "Luxury Pedicure",
+      "Gel Manicure",
+      "Nail Art",
+      "Gel Removal"
+    ],
+    "Skin & Beauty": [
+      "Facial Treatment",
+      "Brow Shaping",
+      "Brow Lamination",
+      "Waxing",
+      "Makeup Application",
+      "Lash Lift",
+      "Body Scrub"
+    ]
+  };
+
+  // ========== BOOKING FORM FUNCTIONS ==========
+  function openBookingModal() {
+    const modal = document.getElementById('bookingModal');
+    if (modal) {
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeBookingModal() {
+    const modal = document.getElementById('bookingModal');
+    if (modal) {
+      modal.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+  }
+
+  function updateServiceDetails() {
+    const category = document.getElementById('serviceCategory').value;
+    const serviceDetailsGroup = document.getElementById('serviceDetailsGroup');
+    const serviceDetailsSelect = document.getElementById('serviceDetails');
+
+    if (category && serviceDetails[category]) {
+      serviceDetailsGroup.style.display = 'block';
+      serviceDetailsSelect.innerHTML = '<option value="">Select a specific service</option>';
+
+      serviceDetails[category].forEach(service => {
+        const option = document.createElement('option');
+        option.value = service;
+        option.textContent = service;
+        serviceDetailsSelect.appendChild(option);
+      });
+
+      serviceDetailsSelect.required = true;
+    } else {
+      serviceDetailsGroup.style.display = 'none';
+      serviceDetailsSelect.required = false;
+      serviceDetailsSelect.innerHTML = '<option value="">Select a specific service</option>';
+    }
+  }
+
+  function formatWhatsAppMessage(formData) {
+    const date = new Date(formData.preferredDate);
+    const formattedDate = date.toLocaleDateString('en-ZA');
+
+    let message = `🟫 *NEW BOOKING REQUEST - TASSEL STUDIO* 🟫\n\n`;
+    message += `*Customer Details:*\n`;
+    message += `👤 Name: ${formData.fullName}\n`;
+    message += `📞 Phone: ${formData.phoneNumber}\n`;
+    if (formData.email) message += `📧 Email: ${formData.email}\n`;
+    message += `\n*Service Details:*\n`;
+    message += `📌 Category: ${formData.serviceCategory}\n`;
+    message += `✨ Service: ${formData.selectedServiceDetails}\n`;
+    message += `\n*Appointment:*\n`;
+    message += `📅 Date: ${formattedDate}\n`;
+    message += `⏰ Time: ${formData.preferredTime}\n`;
+    message += `👥 People: ${formData.numberOfPeople} person(s)\n`;
+
+    if (formData.specialRequests) {
+      message += `\n*Special Requests:*\n${formData.specialRequests}\n`;
+    }
+
+    message += `\n*Booking Status:* Pending Confirmation\n`;
+    message += `🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫`;
+
+    return encodeURIComponent(message);
+  }
+
+  function sendBookingToWhatsApp(event) {
+    event.preventDefault();
+
+    // Get form data
+    const category = document.getElementById('serviceCategory').value;
+    const serviceDetails = document.getElementById('serviceDetails').value;
+    const fullName = document.getElementById('fullName').value;
+    const phoneNumber = document.getElementById('phoneNumber').value;
+    const email = document.getElementById('email').value;
+    const preferredDate = document.getElementById('preferredDate').value;
+    const preferredTime = document.getElementById('preferredTime').value;
+    const numberOfPeople = document.getElementById('numberOfPeople').value;
+    const specialRequests = document.getElementById('specialRequests').value;
+
+    // Validate
+    if (!category || !serviceDetails || !fullName || !phoneNumber || !preferredDate || !preferredTime) {
+      alert('Please fill in all required fields (*)');
+      return;
+    }
+
+    // Validate phone number format
+    const phoneRegex = /^[0-9\s\-\(\)\+]{10,}$/;
+    if (!phoneRegex.test(phoneNumber)) {
+      alert('Please enter a valid phone number');
+      return;
+    }
+
+    const formData = {
+      serviceCategory: category,
+      selectedServiceDetails: serviceDetails,
+      fullName: fullName,
+      phoneNumber: phoneNumber,
+      email: email,
+      preferredDate: preferredDate,
+      preferredTime: preferredTime,
+      numberOfPeople: numberOfPeople,
+      specialRequests: specialRequests
+    };
+
+    const message = formatWhatsAppMessage(formData);
+    const whatsappNumber = '27729605153'; // Tassel WhatsApp number
+
+    // Create WhatsApp URL
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+    // Open WhatsApp
+    window.open(whatsappURL, '_blank');
+
+    // Close modal after a short delay
+    setTimeout(() => {
+      closeBookingModal();
+      // Reset form
+      document.getElementById('bookingForm').reset();
+      document.getElementById('serviceDetailsGroup').style.display = 'none';
+    }, 500);
+
+    // Track booking (optional analytics)
+    console.log('Booking initiated:', formData);
+  }
+
+  // ========== BOOKING MODAL SETUP ==========
+  // Add event listener for Book Now buttons
+  document.querySelectorAll('.nav-btn, .float-book, .btn-primary[href*="wa.me"]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openBookingModal();
+    });
+  });
+
+  // Also add for any other booking buttons
+  document.querySelectorAll('.btn-primary:not([href*="maps"]), .btn-gold, .btn-special').forEach(btn => {
+    if (btn.textContent.includes('Book') || btn.textContent.includes('Claim') || btn.textContent.includes('Grab')) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openBookingModal();
+      });
+    }
+  });
+
+  // Setup modal close
+  const bookingModalClose = document.querySelector('.booking-modal-close');
+  const cancelBookingBtn = document.getElementById('cancelBookingBtn');
+
+  if (bookingModalClose) {
+    bookingModalClose.addEventListener('click', closeBookingModal);
+  }
+  if (cancelBookingBtn) {
+    cancelBookingBtn.addEventListener('click', closeBookingModal);
+  }
+
+  // Close modal when clicking outside
+  window.addEventListener('click', (e) => {
+    const modal = document.getElementById('bookingModal');
+    if (e.target === modal) {
+      closeBookingModal();
+    }
+  });
+
+  // Setup service category change
+  const serviceCategorySelect = document.getElementById('serviceCategory');
+  if (serviceCategorySelect) {
+    serviceCategorySelect.addEventListener('change', updateServiceDetails);
+  }
+
+  // Setup form submission
+  const bookingForm = document.getElementById('bookingForm');
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', sendBookingToWhatsApp);
+  }
+
+  // Set minimum date to today
+  const dateInput = document.getElementById('preferredDate');
+  if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.min = today;
+  }
+
   // Initialize team section
   generateTeamCards();
   // Initialize team section
