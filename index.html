@@ -583,6 +583,130 @@
     </div>
   </section>
 
+  <!-- REVIEWS SECTION - Client Testimonials -->
+  <section id="reviews" class="section-wrap reviews-section">
+    <div class="container">
+      <p class="label fade">Client Love</p>
+      <h2 class="fade">What Our Families Say</h2>
+      <p class="reviews-intro fade">Real feedback from our wonderful clients</p>
+
+      <div class="reviews-grid" id="reviewsGrid">
+        <!-- Google Review - Kamo's Pedicure Experience (New) -->
+        <div class="review-card google-featured fade">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">✨</div>
+              <div class="reviewer-details">
+                <h4>Google Review</h4>
+                <div class="review-rating">
+                  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+                    class="star">★</span><span class="star">★</span>
+                </div>
+              </div>
+            </div>
+            <div class="review-source">
+              <span class="google-badge">Google</span>
+              <span class="review-age">11 months ago</span>
+            </div>
+          </div>
+          <div class="review-content">
+            <p class="review-text">"Loved the ambiance, the ladies welcomed us with a smile and warm attitude. The
+              welcoming drinks were amazing. Thank you for helping discover a new brand and cocktail. The massage took
+              my problems away. Loved the facial products and final glow. Kamo was great with the pedicure. Key call out
+              is the knowledge the ladies have of the product and are able to advise on what will work for you. Overall
+              an amazing experience, I'm must definitely coming back."</p>
+          </div>
+          <div class="review-footer">
+            <span class="review-date">~11 months ago</span>
+            <span class="review-service">Pedicure, Massage, Facial</span>
+          </div>
+        </div>
+
+        <!-- WhatsApp Review - Kayise's Mom (Featured) -->
+        <div class="review-card featured-review fade">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">K</div>
+              <div class="reviewer-details">
+                <h4>Kayise's Mom</h4>
+                <div class="review-rating">
+                  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+                    class="star">★</span><span class="star">★</span>
+                </div>
+              </div>
+            </div>
+            <div class="review-source">
+              <span class="whatsapp-badge">📱 WhatsApp</span>
+            </div>
+          </div>
+          <div class="review-content">
+            <p class="review-text">"Thank you so much Hlengiwe for your hospitality, warmth and the professionalism of
+              your staff. For the first time ever I wasn't anxious and worried the whole time Kayise was doing her hair.
+              I will 100% recommend Tassel anytime. Definitely finally found a home for my daughter's hair. It is
+              extremely refreshing to find someone who is passionate about their work and is diligently looking to meet
+              the needs of their clients, no matter how little/young their clients are. Thank you and may the Lord
+              continue to bless your business & creativity sis."</p>
+          </div>
+          <div class="review-footer">
+            <span class="review-date">March 2026</span>
+            <span class="review-service">Kiddies Hair</span>
+            <span class="review-badge">⭐ Featured Review</span>
+          </div>
+        </div>
+
+        <!-- WhatsApp Review - Palesa's Experience -->
+        <div class="review-card fade">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">P</div>
+              <div class="reviewer-details">
+                <h4>Palesa Mogale</h4>
+                <div class="review-rating">
+                  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+                    class="star">★</span><span class="star">★</span>
+                </div>
+              </div>
+            </div>
+            <div class="review-source">
+              <span class="whatsapp-badge">📱 WhatsApp</span>
+            </div>
+          </div>
+          <div class="review-content">
+            <p class="review-text">"The absolute best service ever! The ladies are so happy here, they are calmer and
+              relaxed. Your studio is absolutely gorgeous and breathtaking, well done mommy! No tears at all on all
+              stages. From wash, to treatment to plait. Totally love it ❤️"</p>
+          </div>
+          <div class="review-footer">
+            <span class="review-date">March 2026</span>
+            <span class="review-service">Kiddies Hair</span>
+          </div>
+        </div>
+      </div>
+
+        <div class="reviews-footer fade">
+          <div class="rating-summary">
+            <div class="average-rating">
+              <span class="rating-number">5.0</span>
+              <div class="rating-stars">
+                <span>★★★★★</span>
+              </div>
+              <span class="rating-count">based on client reviews</span>
+            </div>
+          </div>
+          <div class="review-actions">
+            <a href="#" class="btn-review whatsapp-review" onclick="openReviewModal(); return false;">
+              📱 Leave a WhatsApp Review
+            </a>
+            <a href="https://www.google.com/search?q=Tassel+Hair+and+Beauty+Studio+Reviews"
+              class="btn-review google-review" target="_blank">
+              ⭐ Leave a Google Review
+            </a>
+          </div>
+          <p class="review-note">Your feedback helps us grow and serve you better! 💕</p>
+        </div>
+      </div>
+  </section>
+
   <!-- LOCATION section -->
   <section id="location" class="location-section">
     <div class="container location-grid">
@@ -745,6 +869,119 @@
       </div>
     </div>
   </div>
+
+  <!-- Review Modal -->
+  <div class="review-modal" id="reviewModal">
+    <div class="review-modal-content">
+      <span class="review-modal-close">&times;</span>
+      <div class="review-modal-header">
+        <h2>Share Your Experience</h2>
+        <p>We'd love to hear about your visit to Tassel!</p>
+      </div>
+
+      <form id="reviewForm" class="review-form">
+        <!-- Rating Section -->
+        <div class="form-group rating-group">
+          <label>Your Rating *</label>
+          <div class="star-rating" id="starRating">
+            <span class="star-rating-star" data-rating="1">☆</span>
+            <span class="star-rating-star" data-rating="2">☆</span>
+            <span class="star-rating-star" data-rating="3">☆</span>
+            <span class="star-rating-star" data-rating="4">☆</span>
+            <span class="star-rating-star" data-rating="5">☆</span>
+          </div>
+          <input type="hidden" id="reviewRating" name="rating" value="5" required>
+        </div>
+
+        <!-- Personal Details -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="reviewName">Your Name *</label>
+            <input type="text" id="reviewName" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="reviewService">Service Received *</label>
+            <select id="reviewService" name="service" required>
+              <option value="">Select service</option>
+              <option value="Kiddies Hair">👧 Kiddies Hair</option>
+              <option value="Barber">✂️ Barber</option>
+              <option value="Adult Hair">💇‍♀️ Adult Hair</option>
+              <option value="Nails">💅 Nails</option>
+              <option value="Skin & Beauty">🌿 Skin & Beauty</option>
+              <option value="Multiple Services">✨ Multiple Services</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="reviewStaff">Staff Member (Optional)</label>
+            <input type="text" id="reviewStaff" name="staff" placeholder="e.g., Kamo, Sandra, Natasha">
+          </div>
+          <div class="form-group">
+            <label for="reviewDate">Visit Date *</label>
+            <input type="date" id="reviewDate" name="date" required>
+          </div>
+        </div>
+
+        <!-- Review Content -->
+        <div class="form-group">
+          <label for="reviewTitle">Review Title *</label>
+          <input type="text" id="reviewTitle" name="title" placeholder="Summarize your experience" required>
+        </div>
+
+        <div class="form-group">
+          <label for="reviewMessage">Your Review *</label>
+          <textarea id="reviewMessage" name="message" rows="5"
+            placeholder="Tell us about your experience... What did you love? How was the service? Would you recommend us?"
+            required></textarea>
+        </div>
+
+        <!-- Highlights -->
+        <div class="form-group">
+          <label>What did you love most? (Select all that apply)</label>
+          <div class="highlight-options">
+            <label class="checkbox-label">
+              <input type="checkbox" name="highlights" value="Service Quality"> ⭐ Service Quality
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="highlights" value="Staff Friendliness"> 😊 Staff Friendliness
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="highlights" value="Ambiance"> 🏠 Ambiance
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="highlights" value="Kiddies Care"> 👧 Kiddies Care
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="highlights" value="Product Quality"> 🧴 Product Quality
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="highlights" value="Value for Money"> 💰 Value for Money
+            </label>
+          </div>
+        </div>
+
+        <!-- Permission -->
+        <div class="form-group permission-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="reviewPermission" name="permission" required>
+            I give permission for Tassel to share my review (first name only) on the website and social media
+          </label>
+        </div>
+
+        <div class="form-buttons">
+          <button type="button" class="btn-cancel" id="cancelReviewBtn">Cancel</button>
+          <button type="submit" class="btn-submit">📱 Send Review via WhatsApp</button>
+        </div>
+      </form>
+
+      <div class="review-note">
+        <p>✨ Your review will be sent to us via WhatsApp. We appreciate your feedback!</p>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>

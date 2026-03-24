@@ -2131,6 +2131,7 @@ footer {
     opacity: 0;
     transform: translateY(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -2167,7 +2168,7 @@ footer {
   cursor: pointer;
   z-index: 10;
   transition: color 0.3s;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
   width: 36px;
   height: 36px;
   display: flex;
@@ -2178,7 +2179,7 @@ footer {
 
 .booking-modal-close:hover {
   color: var(--gold-light);
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .booking-form {
@@ -2283,16 +2284,467 @@ footer {
     grid-template-columns: 1fr;
     gap: 0;
   }
-  
+
   .booking-form {
     padding: 1.5rem;
   }
-  
+
   .booking-modal-header {
     padding: 1.2rem;
   }
-  
+
   .booking-modal-header h2 {
     font-size: 1.4rem;
   }
+}
+
+/* ========== REVIEWS SECTION STYLES ========== */
+.reviews-section {
+  background: linear-gradient(135deg, var(--soft) 0%, var(--cream) 100%);
+  padding: 80px 0;
+}
+
+.reviews-intro {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto 50px auto;
+  line-height: 1.6;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.review-card {
+  background: white;
+  border-radius: 24px;
+  padding: 1.8rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+  position: relative;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.review-card.featured-review {
+  border: 2px solid var(--gold);
+  background: linear-gradient(135deg, white 0%, #fffaf5 100%);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.reviewer-info {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.reviewer-avatar {
+  width: 50px;
+  height: 50px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.reviewer-details h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: var(--deep);
+}
+
+.review-rating {
+  display: flex;
+  gap: 3px;
+}
+
+.star {
+  color: var(--gold);
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.whatsapp-badge {
+  background: #25D366;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.google-badge {
+  background: #4285F4;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.review-content {
+  margin-bottom: 1.2rem;
+}
+
+.review-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text);
+  font-style: normal;
+}
+
+.review-extra {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(154, 128, 96, 0.2);
+}
+
+.review-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(154, 128, 96, 0.1);
+}
+
+.review-date {
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+.review-service {
+  font-size: 0.7rem;
+  background: var(--soft);
+  padding: 4px 10px;
+  border-radius: 20px;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.review-badge {
+  font-size: 0.65rem;
+  background: var(--gold);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.reviews-footer {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(154, 128, 96, 0.2);
+}
+
+.rating-summary {
+  margin-bottom: 25px;
+}
+
+.average-rating {
+  display: inline-block;
+  text-align: center;
+}
+
+.rating-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  font-family: 'Cormorant Garamond', serif;
+  display: block;
+  line-height: 1;
+}
+
+.rating-stars {
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin: 8px 0;
+}
+
+.rating-count {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.review-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.btn-review {
+  display: inline-block;
+  padding: 12px 32px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 40px;
+  transition: all 0.3s;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+}
+
+.whatsapp-review {
+  background: #25D366;
+  color: white;
+}
+
+.whatsapp-review:hover {
+  background: #128C7E;
+  transform: translateY(-2px);
+}
+
+.google-review {
+  background: var(--deep);
+  color: var(--cream);
+}
+
+.google-review:hover {
+  background: var(--gold);
+  transform: translateY(-2px);
+}
+
+.review-note {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .review-card {
+    padding: 1.5rem;
+  }
+
+  .review-header {
+    flex-direction: column;
+  }
+
+  .reviewer-avatar {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+
+  .review-text {
+    font-size: 0.9rem;
+  }
+
+  .review-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-review {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews-section {
+    padding: 60px 20px;
+  }
+
+  .review-card {
+    padding: 1.2rem;
+  }
+}
+
+/* ========== REVIEW MODAL STYLES ========== */
+.review-modal {
+  display: none;
+  position: fixed;
+  z-index: 1002;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+}
+
+.review-modal.show {
+  display: flex;
+}
+
+.review-modal-content {
+  background: var(--cream);
+  max-width: 650px;
+  width: 90%;
+  max-height: 90vh;
+  border-radius: 24px;
+  overflow-y: auto;
+  position: relative;
+  animation: modalSlideIn 0.3s ease;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.review-modal-header {
+  background: var(--deep);
+  color: var(--cream);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-radius: 24px 24px 0 0;
+}
+
+.review-modal-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--cream);
+}
+
+.review-modal-header p {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.review-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--cream);
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.3s;
+  background: rgba(0, 0, 0, 0.3);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.review-modal-close:hover {
+  color: var(--gold-light);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.review-form {
+  padding: 2rem;
+}
+
+/* Star Rating Styles */
+.rating-group {
+  text-align: center;
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.star-rating-star {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #ddd;
+}
+
+.star-rating-star:hover,
+.star-rating-star.active {
+  color: var(--gold);
+  transform: scale(1.1);
+}
+
+/* Highlight Options */
+.highlight-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text);
+  cursor: pointer;
+  padding: 8px;
+  background: var(--soft);
+  border-radius: 10px;
+  transition: all 0.2s;
+}
+
+.checkbox-label:hover {
+  background: var(--gold-light);
+  color: white;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--gold);
+}
+
+.permission-group {
+  background: var(--soft);
+  padding: 15px;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+.permission-group .checkbox-label {
+  background: transparent;
+  padding: 0;
+}
+
+.permission-group .checkbox-label:hover {
+  background: transparent;
+  color: var(--text);
+}
+
+.review-note {
+  padding: 1rem 2rem 2rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--muted);
+  border-top: 1px solid rgba(154, 128, 96, 0.1);
 }
