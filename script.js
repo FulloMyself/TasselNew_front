@@ -411,7 +411,7 @@ const teamMembers = [
     role: "Staff - Receptionist and Hair Department",
     specialization: "Hair Stylist, Receptionist",
     image: "assets/images/team/keisha.jpeg",
-    bio: "The friendly face behind your bookings and the one keeping you updated on Tassel's latest offers. She's dedicated to making your experience smooth from start to finish.",
+    bio: "The friendly face behind your bookings and the one keeping you updated on Tassel's latest offers. She's dedicated to making your experience smooth from start to finish. She also specializes in caucasian hair styling, bringing a wealth of experience to our hair department.",
     quote: "Your smile is our greatest reward. Let me help you book your perfect appointment.",
     instagram: "https://instagram.com/",
     whatsapp: "https://wa.me/27729605153"
