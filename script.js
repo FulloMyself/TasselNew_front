@@ -415,6 +415,17 @@ const teamMembers = [
     quote: "Your smile is our greatest reward. Let me help you book your perfect appointment.",
     instagram: "https://instagram.com/",
     whatsapp: "https://wa.me/27729605153"
+  },
+  {
+    id: 8,
+    name: "Cheslyn",
+    role: "Staff - Hair Department",
+    specialization: "Barber",
+    image: "assets/images/team/cheslyn.jpeg",
+    bio: "Cheslyn's creative styling and gentle approach have made her a favorite among young clients. She specializes in creating magical hairstyles for children.",
+    quote: "Beautiful hair is the perfect way to express your child's unique personality.",
+    instagram: "https://instagram.com/",
+    whatsapp: "https://wa.me/27729605153"
   }
 ];
 
