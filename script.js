@@ -94,31 +94,34 @@ function formatWhatsAppMessage(formData) {
   const formattedDate = date.toLocaleDateString('en-ZA');
 
   let message = `*NEW BOOKING REQUEST - TASSEL STUDIO*\n`;
-  message += `═══════════════════════════════\n\n`;
+  message += `----------------------------------------\n\n`;
 
-  message += `*CUSTOMER DETAILS*\n`;
+  message += `CUSTOMER DETAILS\n`;
   message += `Name: ${formData.fullName}\n`;
   message += `Phone: ${formData.phoneNumber}\n`;
   if (formData.email) message += `Email: ${formData.email}\n`;
   message += `\n`;
 
-  message += `*SERVICE DETAILS*\n`;
+  message += `SERVICE DETAILS\n`;
   message += `Category: ${formData.serviceCategory}\n`;
   message += `Service: ${formData.selectedServiceDetails}\n`;
+  if (formData.selectedStaff && formData.selectedStaff !== 'Any available staff') {
+    message += `Requested Staff: ${formData.selectedStaff}\n`;
+  }
   message += `\n`;
 
-  message += `*APPOINTMENT*\n`;
+  message += `APPOINTMENT\n`;
   message += `Date: ${formattedDate}\n`;
   message += `Time: ${formData.preferredTime}\n`;
   message += `People: ${formData.numberOfPeople} person(s)\n`;
 
   if (formData.specialRequests && formData.specialRequests.trim()) {
-    message += `\n*SPECIAL REQUESTS*\n`;
+    message += `\nSPECIAL REQUESTS\n`;
     message += `${formData.specialRequests}\n`;
   }
 
-  message += `\n*STATUS:* Pending Confirmation\n`;
-  message += `═══════════════════════════════\n`;
+  message += `\nSTATUS: Pending Confirmation\n`;
+  message += `----------------------------------------\n`;
   message += `Reply to confirm this booking.`;
 
   return encodeURIComponent(message);
@@ -129,6 +132,7 @@ function sendBookingToWhatsApp(event) {
 
   const category = document.getElementById('serviceCategory')?.value;
   const serviceDetails = document.getElementById('serviceDetails')?.value;
+  const selectedStaff = document.getElementById('staffSelect')?.value;
   const fullName = document.getElementById('fullName')?.value;
   const phoneNumber = document.getElementById('phoneNumber')?.value;
   const email = document.getElementById('email')?.value;
@@ -151,6 +155,7 @@ function sendBookingToWhatsApp(event) {
   const formData = {
     serviceCategory: category,
     selectedServiceDetails: serviceDetails,
+    selectedStaff: selectedStaff || 'Any available staff',
     fullName: fullName,
     phoneNumber: phoneNumber,
     email: email,
@@ -170,10 +175,62 @@ function sendBookingToWhatsApp(event) {
     closeBookingModal();
     document.getElementById('bookingForm')?.reset();
     const serviceDetailsGroup = document.getElementById('serviceDetailsGroup');
+    const staffSelectionGroup = document.getElementById('staffSelectionGroup');
     if (serviceDetailsGroup) serviceDetailsGroup.style.display = 'none';
+    if (staffSelectionGroup) staffSelectionGroup.style.display = 'none';
   }, 500);
 
   console.log('Booking initiated:', formData);
+}
+
+// ========== STAFF BY SERVICE CATEGORY ==========
+const staffByService = {
+  "Kiddies Hair": [
+    { id: 3, name: "Natasha", role: "Kiddies Hair Stylist", specialty: "Braiding, School Styles" },
+    { id: 4, name: "Cynthia", role: "Kiddies Hair Stylist", specialty: "Creative Styles" },
+    { id: 5, name: "Tiny", role: "Kiddies Hair Stylist", specialty: "Gentle Styling" },
+    { id: 6, name: "Thando", role: "Kiddies Hair Stylist", specialty: "Party Hairstyles" }
+  ],
+  "Barber": [
+    { id: 8, name: "Cheslyn", role: "Barber", specialty: "Modern Cuts, Fades" }
+  ],
+  "Adult Hair": [
+    { id: 7, name: "Keisha", role: "Hair Stylist", specialty: "Cuts, Styling" }
+  ],
+  "Nails": [
+    { id: 1, name: "Sandra", role: "Nail Tech", specialty: "Nail Art, Manicures" }
+  ],
+  "Skin & Beauty": [
+    { id: 2, name: "Nomonde", role: "Beauty Therapist", specialty: "Facials, Waxing" }
+  ]
+};
+
+// Update staff list based on selected category
+function updateStaffList() {
+  const category = document.getElementById('serviceCategory')?.value;
+  const staffGroup = document.getElementById('staffSelectionGroup');
+  const staffSelect = document.getElementById('staffSelect');
+  
+  if (!category || !staffByService[category]) {
+    if (staffGroup) staffGroup.style.display = 'none';
+    return;
+  }
+  
+  const staffList = staffByService[category];
+  
+  if (staffGroup) staffGroup.style.display = 'block';
+  if (staffSelect) {
+    staffSelect.innerHTML = '<option value="">Select a staff member</option>';
+    
+    staffList.forEach(staff => {
+      const option = document.createElement('option');
+      option.value = staff.name;
+      option.textContent = `${staff.name} - ${staff.role} (${staff.specialty})`;
+      staffSelect.appendChild(option);
+    });
+    
+    staffSelect.required = true;
+  }
 }
 
 // ========== REVIEW MODAL FUNCTIONS ==========
@@ -255,7 +312,6 @@ function setupStarRating() {
 }
 
 function formatWhatsAppReview(formData) {
-  // Convert rating to stars without using unicode symbols
   const ratingText = `${formData.rating}/5 stars`;
 
   let message = `*NEW CLIENT REVIEW - TASSEL STUDIO*\n`;
@@ -422,8 +478,8 @@ const teamMembers = [
     role: "Staff - Hair Department",
     specialization: "Barber",
     image: "assets/images/team/cheslyn.jpeg",
-    bio: "Cheslyn's creative styling and gentle approach have made him a favorite among young clients. He specializes in creating magical hairstyles for children.",
-    quote: "Beautiful hair is the perfect way to express your child's unique personality.",
+    bio: "Cheslyn's creative styling and gentle approach have made him a favorite among young clients. He specializes in creating magical hairstyles for children and precision cuts for men.",
+    quote: "A great haircut changes everything. Let me help you find your style.",
     instagram: "https://instagram.com/",
     whatsapp: "https://wa.me/27729605153"
   }
@@ -448,8 +504,8 @@ function generateTeamCards() {
                 <p class="team-role">${member.role}</p>
                 <p class="team-specialization">${member.specialization}</p>
                 <div class="team-social">
-                    <a href="${member.instagram}" target="_blank" class="social-icon" onclick="event.stopPropagation()">📷</a>
-                    <a href="${member.whatsapp}" target="_blank" class="social-icon" onclick="event.stopPropagation()">💬</a>
+                    <a href="${member.instagram}" target="_blank" class="social-icon" onclick="event.stopPropagation()"><i class="fab fa-instagram"></i></a>
+                    <a href="${member.whatsapp}" target="_blank" class="social-icon" onclick="event.stopPropagation()"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
@@ -515,6 +571,24 @@ function setupTeamModal() {
       modal.classList.remove('show');
     }
   });
+}
+
+// ========== VIDEO AUTOPLAY ON SCROLL ==========
+function handleVideoAutoplay() {
+  const videos = document.querySelectorAll('.gallery-video');
+  
+  const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const video = entry.target;
+      if (entry.isIntersecting) {
+        video.play().catch(e => console.log('Autoplay prevented:', e));
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  videos.forEach(video => videoObserver.observe(video));
 }
 
 // ========== DOM CONTENT LOADED INITIALIZATION ==========
@@ -673,9 +747,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if (isVideo && video) {
       lightboxImg.style.display = 'none';
       lightboxVideo.style.display = 'block';
-      lightboxVideo.src = video.querySelector('source')?.src || '';
+      const videoSource = video.querySelector('source')?.src || video.src;
+      lightboxVideo.src = videoSource;
       lightboxVideo.load();
-      lightboxVideo.play();
+      lightboxVideo.muted = false;
+      lightboxVideo.play().catch(e => console.log('Playback error:', e));
     } else if (img) {
       lightboxVideo.style.display = 'none';
       lightboxVideo.pause();
@@ -811,7 +887,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (bookingModalClose) bookingModalClose.addEventListener('click', closeBookingModal);
   if (cancelBookingBtn) cancelBookingBtn.addEventListener('click', closeBookingModal);
-  if (serviceCategorySelect) serviceCategorySelect.addEventListener('change', updateServiceDetails);
+  if (serviceCategorySelect) {
+    serviceCategorySelect.addEventListener('change', () => {
+      updateServiceDetails();
+      updateStaffList();
+    });
+  }
   if (bookingForm) bookingForm.addEventListener('submit', sendBookingToWhatsApp);
   if (dateInput) {
     const today = new Date().toISOString().split('T')[0];
@@ -843,4 +924,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // ========== TEAM SECTION INITIALIZATION ==========
   generateTeamCards();
   setupTeamModal();
+
+  // ========== VIDEO AUTOPLAY INITIALIZATION ==========
+  handleVideoAutoplay();
 });
